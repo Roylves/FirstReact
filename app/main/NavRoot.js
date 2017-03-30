@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Home from './Home'
 import About from './About'
+import Test from './Test'
 
 import {
   BackAndroid,
@@ -27,6 +28,10 @@ class NavRoot extends Component {
     const { route } = props.scene
     if (route.key === 'home') {
      return <Home
+              _resetNavigate={this._resetNavigate.bind(this)} />
+    }
+    if (route.key === 'test') {
+     return <Test
               _handleNavigate={this._handleNavigate.bind(this)} />
     }
     if (route.key === 'about') {
@@ -41,16 +46,12 @@ class NavRoot extends Component {
     return true
   }
   _handleNavigate (action) {
-    switch (action && action.type) {
-      case 'push':
         this.props.pushRoute(action.route)
         return true
-      case 'back':
-      case 'pop':
-        return this._handleBackAction()
-      default:
-        return false
-    }
+  }
+  _resetNavigate (action) {
+        this.props.resetRoute(action.route)
+        return true
   }
   render () {
     return (

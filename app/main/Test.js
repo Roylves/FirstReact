@@ -7,17 +7,17 @@ import {
 import Button from './Button'
 
 const route = {
-  type: 'reset',
+  type: 'push',
   route: {
-    key: 'test',
-    title: 'Test'
+    key: 'about',
+    title: 'About'
   }
 }
 
-const Home = ({_resetNavigate}) => (
+const Test = ({_handleNavigate}) => (
   <View style={styles.container}>
     <Text style={styles.title}>Home</Text>
-    <Button onPress={() => _resetNavigate(route)} label='Go To Test' />
+    <Button onPress={() => _handleNavigate(route)} label='Go To About' />
   </View>
 )
 
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Home
+export default Test

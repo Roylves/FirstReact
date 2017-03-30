@@ -25,7 +25,6 @@ function navigationState (state = initialState, action) {
       return NavigationStateUtils.pop(state)
 
     case RESET_ROUTE:
-      if (state.routes[state.index].key === (action.route && action.route.key)) return state
     return NavigationStateUtils.reset(state, [action.route],0)
 
    default:
