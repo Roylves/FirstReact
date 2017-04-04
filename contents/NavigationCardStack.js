@@ -53,6 +53,7 @@ function reducer(state: object, action: string, route: object): object {
       //   routes,
       // }
     }
+    
     default:
       return state
     }

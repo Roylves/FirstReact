@@ -7,17 +7,18 @@ import {
 import Button from './Button'
 
 const route = {
-  type: 'reset',
+  type: 'push',
   route: {
-    key: 'test',
-    title: 'Test'
+    //key is a unique id/class->assign to specific page->IMPORTANT
+    key: 'about',
+    title: 'About'
   }
 }
 
-const Home = ({_resetNavigate}) => (
+const Home = ({_handleNavigate}) => (
   <View style={styles.container}>
     <Text style={styles.title}>Home</Text>
-    <Button onPress={() => _resetNavigate(route)} label='Go To Test' />
+    <Button onPress={() => _handleNavigate(route)} label='This is Home' />
   </View>
 )
 

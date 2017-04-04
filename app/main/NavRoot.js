@@ -24,18 +24,21 @@ class NavRoot extends Component {
   componentWillUnmount () {
     BackAndroid.removeEventListener('hardwareBackPress', this._handleBackAction)
   }
+
+  //Place to declare page route
   _renderScene (props) {
     const { route } = props.scene
     if (route.key === 'home') {
      return <Home
-              _resetNavigate={this._resetNavigate.bind(this)} />
-    }
-    if (route.key === 'test') {
-     return <Test
               _handleNavigate={this._handleNavigate.bind(this)} />
     }
     if (route.key === 'about') {
-     return <About _goBack={this._handleBackAction.bind(this)} />
+     return <About 
+              _handleNavigate={this._handleNavigate.bind(this)} />
+    }
+    if (route.key === 'test') {
+     return <Test
+              _resetNavigate={this._resetNavigate.bind(this)} />
     }
   }
   _handleBackAction () {
@@ -56,7 +59,7 @@ class NavRoot extends Component {
   render () {
     return (
       <NavigationCardStack
-        direction='vertical'
+        direction='horizontal'
         navigationState={this.props.navigation}
         onNavigate={this._handleNavigate.bind(this)}
         renderScene={this._renderScene} />

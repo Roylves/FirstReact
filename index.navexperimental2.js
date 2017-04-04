@@ -5,7 +5,7 @@
  */
 
 import { AppRegistry } from 'react-native'
-import App from '.contents/NavigationCardStack'
+import App from './contents/NavigationCardStack'
 
 
 AppRegistry.registerComponent('FirstReact', () => App);
